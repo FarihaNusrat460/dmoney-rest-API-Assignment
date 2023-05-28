@@ -18,6 +18,7 @@ This project uses newman to automate the Dmoney-Trnx-API from postman.
 A report will be generate in your project source root.
 
 # Test case:
+https://docs.google.com/spreadsheets/d/1Y7SU-GvMGi0KOKaklYfN5aebKZ35-pAx3Xh0DY-7JsI/edit#gid=0
 
 # Bug Report:
 
