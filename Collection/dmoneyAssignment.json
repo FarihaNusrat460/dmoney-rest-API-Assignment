@@ -11,7 +11,7 @@
 			"name": "Admin login",
 			"item": [
 				{
-					"name": "Admin can do login successfully",
+					"name": "Admin can do login successfully with valid credentials",
 					"event": [
 						{
 							"listen": "test",
@@ -142,7 +142,7 @@
 			"name": "Create agent",
 			"item": [
 				{
-					"name": "Admin can create agent",
+					"name": "Admin can create agent with unique data",
 					"event": [
 						{
 							"listen": "test",
@@ -240,7 +240,7 @@
 					"response": []
 				},
 				{
-					"name": "Admin can't create agent if agent already exists",
+					"name": "Admin can't create agent if the agent is already exists",
 					"event": [
 						{
 							"listen": "test",
@@ -314,7 +314,7 @@
 			"name": "Create Customers",
 			"item": [
 				{
-					"name": "Admin can create customer1",
+					"name": "Admin can create customer1 with unique data",
 					"event": [
 						{
 							"listen": "test",
@@ -410,7 +410,7 @@
 					"response": []
 				},
 				{
-					"name": "Admin can create customer2",
+					"name": "Admin can create customer2 with unique data",
 					"event": [
 						{
 							"listen": "test",
@@ -554,7 +554,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"name\": \"Brian Gorczany\",\r\n        \"email\": \"Wilmer.Leannon79@hotmail.com\",\r\n        \"password\": \"1234\",\r\n        \"phone_number\": \"01562894678\",\r\n        \"nid\": \"166252894678\",\r\n        \"role\": \"Customer\"\r\n}",
+							"raw": "{\r\n        \"name\": \"Brian Gorczany\",\r\n        \"email\": \"Wilmer.Leannon79@hotmail.com\",\r\n        \"password\": \"1234\",\r\n        \"phone_number\": \"01562894678\",\r\n        \"nid\": \"166252894678\",\r\n        \"role\": \"Customer\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1184,7 +1184,7 @@
 			"name": "Send Money",
 			"item": [
 				{
-					"name": "Send money to the other customer",
+					"name": "Send money to the other valid customer account",
 					"event": [
 						{
 							"listen": "test",
@@ -1445,7 +1445,7 @@
 			"name": "Payment",
 			"item": [
 				{
-					"name": "Payment by customer2 to the merchant",
+					"name": "Payment by customer2 to the valid merchant account",
 					"event": [
 						{
 							"listen": "test",
@@ -1488,7 +1488,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"from_account\":\"{{phone_number_cus2}}\",\r\n    \"to_account\":\"01686606905\",\r\n    \"amount\":100\r\n}",
+							"raw": "{\r\n    \"from_account\":\"{{phone_number_cus2}}\",\r\n    \"to_account\":\"01686606905\",\r\n    \"amount\":400\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1667,31 +1667,31 @@
 		},
 		{
 			"key": "token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMUByb2FkdG9jYXJlZXIubmV0IiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjg1MTIzMzIwLCJleHAiOjE2ODUxMjUxMjB9.VygXpI-v3huY-4zRlaKPM7_jMK8nfs8rGf02SPR036Y"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMUByb2FkdG9jYXJlZXIubmV0IiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjg1MTk2NzAwLCJleHAiOjE2ODUxOTg1MDB9.YiEPGsUCEWRDa4daIkfQWM_7HrmKRY_wxqQMO_ZKaIk"
 		},
 		{
 			"key": "phone_number",
-			"value": "01561820473"
+			"value": "01565166739"
 		},
 		{
 			"key": "nid",
-			"value": "166251820473"
+			"value": "166255166739"
 		},
 		{
 			"key": "phone_number_cus1",
-			"value": "01569342599"
+			"value": "01565066811"
 		},
 		{
 			"key": "nid_cus1",
-			"value": "166259342599"
+			"value": "166255066811"
 		},
 		{
 			"key": "phone_number_cus2",
-			"value": "01568526331"
+			"value": "01569255015"
 		},
 		{
 			"key": "nid_cus2",
-			"value": "166258526331"
+			"value": "166259255015"
 		}
 	]
 }
