@@ -21,6 +21,7 @@ A report will be generate in your project source root.
 https://docs.google.com/spreadsheets/d/1Y7SU-GvMGi0KOKaklYfN5aebKZ35-pAx3Xh0DY-7JsI/edit#gid=0
 
 # Bug Report:
+https://docs.google.com/spreadsheets/d/1WFOXROXzajOagPSUa5ZwNkxAFf7EfijMqxLBRIPbdrc/edit?usp=sharing
 
 # Documentation:
 https://documenter.getpostman.com/view/27409344/2s93m7WM7e
