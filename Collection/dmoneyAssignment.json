@@ -102,21 +102,63 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "text"
-							},
-							{
-								"key": "X-AUTH-SECRET-KEY",
-								"value": "ROADTOSDET",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"email\":\"admin1@roadtocareer.net\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/user/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin can't login with wrong email id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test 1 login unsuccessful check with wrong email id\r",
+									"pm.test(\"Admin can't login with wrong email id\",()=>{\r",
+									"var jsonData=pm.response.json();\r",
+									"var actual_message=jsonData.message;\r",
+									"\r",
+									"pm.expect(actual_message).contains(\"User not found\")\r",
+									"\r",
+									"})\r",
+									"\r",
+									"\r",
+									"\r",
+									"// Test 2 status code check\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admi1@roadto\",\r\n    \"password\":\"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,7 +330,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"name\": \"Wendell Daugherty\",\r\n        \"email\": \"Clovis.Terry16@yahoo.com\",\r\n        \"password\": \"1234\",\r\n        \"phone_number\": \"01562243446\",\r\n        \"nid\": \"166252243446\",\r\n        \"role\": \"Agent\"\r\n}\r\n\r\n",
+							"raw": "{\r\n        \"name\": \"Wendell Daugherty\",\r\n        \"email\": \"Clovis.Terry16@yahoo.com\",\r\n        \"password\": \"1234\",\r\n        \"phone_number\": \"01562243446\",\r\n        \"nid\": \"166256514179\",\r\n        \"role\": \"Agent\"\r\n}\r\n\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -641,7 +683,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"from_account\":\"SYSTEM\",\r\n    \"to_account\":\"{{phone_number}}\",\r\n    \"amount\":8000\r\n}",
+							"raw": "{\r\n    \"from_account\":\"SYSTEM\",\r\n    \"to_account\":\"{{phone_number}}\",\r\n    \"amount\":5000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -692,6 +734,15 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"request": {
@@ -737,19 +788,19 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// //Test1 Deposit successful to customer\r",
+									"//Test1 Deposit successful to customer\r",
 									"\r",
-									"// pm.test(\"if Deposit successful is showing\",()=>{\r",
-									"// var jsonData=pm.response.json();\r",
-									"// var actual_message=jsonData.message;\r",
-									"// pm.expect(actual_message).contains(\"Deposit successful\")\r",
+									"pm.test(\"if Insufficient balance is showing\",()=>{\r",
+									"var jsonData=pm.response.json();\r",
+									"var actual_message=jsonData.message;\r",
+									"pm.expect(actual_message).contains(\"Insufficient balance\")\r",
 									"\r",
-									"// })\r",
+									"})\r",
 									"\r",
-									"// //Test2 check status code\r",
-									"// pm.test(\"Status code is 201\", function () {\r",
-									"//     pm.response.to.have.status(201);\r",
-									"// });\r",
+									"//Test2 check status code\r",
+									"pm.test(\"Status code is 208\", function () {\r",
+									"    pm.response.to.have.status(208);\r",
+									"});\r",
 									"\r",
 									"\r",
 									""
@@ -1667,31 +1718,31 @@
 		},
 		{
 			"key": "token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMUByb2FkdG9jYXJlZXIubmV0IiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjg1MTk2NzAwLCJleHAiOjE2ODUxOTg1MDB9.YiEPGsUCEWRDa4daIkfQWM_7HrmKRY_wxqQMO_ZKaIk"
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMUByb2FkdG9jYXJlZXIubmV0IiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjg1NTAyOTY0LCJleHAiOjE2ODU1MDQ3NjR9.1TYbZ7E_cEYM-fxiUNKNbGHtPYleUFbPNYk5pE2X6yA"
 		},
 		{
 			"key": "phone_number",
-			"value": "01565166739"
+			"value": "01568591665"
 		},
 		{
 			"key": "nid",
-			"value": "166255166739"
+			"value": "166258591665"
 		},
 		{
 			"key": "phone_number_cus1",
-			"value": "01565066811"
+			"value": "01569156496"
 		},
 		{
 			"key": "nid_cus1",
-			"value": "166255066811"
+			"value": "166259156496"
 		},
 		{
 			"key": "phone_number_cus2",
-			"value": "01569255015"
+			"value": "01562159538"
 		},
 		{
 			"key": "nid_cus2",
-			"value": "166259255015"
+			"value": "166252159538"
 		}
 	]
 }
